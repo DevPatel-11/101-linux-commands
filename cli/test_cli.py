@@ -6,7 +6,7 @@ import subprocess
 import sys
 
 
-def test_cli_help():
+def test_cli_help() -> None:
     """Test that the CLI shows help."""
     result = subprocess.run(
         [sys.executable, "cli.py", "--help"],
@@ -18,7 +18,7 @@ def test_cli_help():
     assert "101 Linux Commands CLI" in result.stdout
 
 
-def test_hello_command():
+def test_hello_command() -> None:
     """Test the hello command."""
     result = subprocess.run(
         [sys.executable, "cli.py", "hello", "greet"],
@@ -30,7 +30,7 @@ def test_hello_command():
     assert "Hello, World!" in result.stdout
 
 
-def test_hello_command_with_name():
+def test_hello_command_with_name() -> None:
     """Test the hello command with a custom name."""
     result = subprocess.run(
         [sys.executable, "cli.py", "hello", "greet", "--name", "Linux"],
@@ -42,7 +42,7 @@ def test_hello_command_with_name():
     assert "Hello, Linux!" in result.stdout
 
 
-def test_hello_help():
+def test_hello_help() -> None:
     """Test the hello command help."""
     result = subprocess.run(
         [sys.executable, "cli.py", "hello", "--help"],
